@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Jockey+One:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>Redirecting from brickodyssey.site to vangelisbricks.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .redirect-message {
+            margin-bottom: 20px;
+        }
+        .redirect-countdown {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        h1 {
+            font-family: 'Jockey One', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>brickodyssey.site was rebranded to vangelisbricks.com</h1>
+        <p class="redirect-message">You will be redirected to vangelisbricks.com in <span id="countdown" class="redirect-countdown">3</span> seconds.</p>
+        <p>If you are not redirected automatically, <a id="redirect-link" href="https://vangelisbricks.com">click here</a>.</p>
+    </div>
+
+    <script>
+        // Immediate redirect option
+        window.location.href = "https://vangelisbricks.com";
+        
+        // Fallback countdown redirect in case the immediate redirect is blocked
+        let count = 3;
+        const countdownElement = document.getElementById('countdown');
+        const countdownInterval = setInterval(() => {
+            count--;
+            countdownElement.textContent = count;
+            
+            if (count <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = "https://vangelisbricks.com";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
